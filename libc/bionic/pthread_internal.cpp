@@ -107,7 +107,7 @@ pthread_internal_t* __pthread_internal_find(pthread_t thread_id) {
   for (pthread_internal_t* t = g_thread_list; t != nullptr; t = t->next) {
     if (t == thread) return thread;
   }
-
+/*
   // Historically we'd return null, but
   if (bionic_get_application_target_sdk_version() >= __ANDROID_API_O__) {
     if (thread == nullptr) {
@@ -121,5 +121,6 @@ pthread_internal_t* __pthread_internal_find(pthread_t thread_id) {
       __libc_fatal("invalid pthread_t %p passed to libc", thread);
     }
   }
+*/
   return nullptr;
 }
